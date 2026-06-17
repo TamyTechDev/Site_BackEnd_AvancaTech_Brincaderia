@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 
 import Produtos from "./Pages/Produtos";
+import Cadastro from "./Pages/Cadastro";
 
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/"
           element={<Home />}
+        />
+        <Route
+          path="/cadastro"
+          element={<Cadastro/>}
         />
 
 

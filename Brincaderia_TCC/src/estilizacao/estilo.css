@@ -1,3 +1,46 @@
 .teste {
     background-color: 000;
 }
+
+.barra-pesquisa {
+  display:flex;
+  align-items: center;
+  background: #ffff;
+  border:2px solid #1861ac;
+  padding: 8px 16px;
+  width: 400px;
+  mas-width: 100%
+}
+.barra-pesquisa input {
+border: none;
+outline: none;
+flex: 1;
+font-size: 16px;
+background: transparent;
+
+
+}
+
+
+.barra-pesquisa button{
+background: #ff6b9d;
+border:none;
+border-radius: 50%;
+width: 32px;
+cursor: pointer;
+font-size: 14px;
+
+
+}
+
+
+.barra-pesquisa button:hover{
+background: #ff4785;
+
+}
+
+
+.barra-pesquisa:focus-within{
+border-color: #ff6b9d;
+
+}

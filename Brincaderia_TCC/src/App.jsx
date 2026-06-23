@@ -11,7 +11,7 @@ import Cadastro from "./Pages/Cadastro"
 
 import Carrinho from "./Pages/Carrinho";
 
-import Tecido from "./Pages/Tecidos";
+import Tecido from "./Pages/Tecido";
 
 
 

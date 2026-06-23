@@ -4,6 +4,7 @@ import Foto00 from "../img/Foto00.png";
 import Home1 from "../img/Home1.png";
 import Barradeservicos from "../img/Barradeservicos.png";
 import BarraPatrocinio from "../img/BarraPatrocinio.png";
+import Navbar from "../Components/Navbar";
 
 import  { useState } from 'react';
 import "./Cadastro.css";

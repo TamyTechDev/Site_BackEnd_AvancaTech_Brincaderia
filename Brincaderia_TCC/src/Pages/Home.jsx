@@ -126,7 +126,7 @@ alert('Digita algo pra buscar');
               to="/produtos"
               className="btn btn-body-emphasis btn-lg "
             >
-              CRIAR SLIDE
+             teste
             </Link>
     
 

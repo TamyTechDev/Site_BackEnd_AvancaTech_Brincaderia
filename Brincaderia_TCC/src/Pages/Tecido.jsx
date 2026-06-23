@@ -1,6 +1,8 @@
+import Home1 from "./img/Home1.png";
+
 function Tecido (){
 return(
-<div className="d-flex gap-5 justify-content-center mb-5 ">
+    <div className="d-flex gap-5 justify-content-center mb-5 ">
           <img 
           src={Home1}
           alt="Coleção Nova"
@@ -35,7 +37,6 @@ return(
 
           
       </div>
-    
     </>
   );
 }

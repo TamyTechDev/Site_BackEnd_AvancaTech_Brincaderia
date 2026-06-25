@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Foto1 from "../img/Foto1.png";
 import Foto00 from "../img/Foto00.png";
 import Home1 from "../img/Home1.png";
 import Barradeservicos from "../img/Barradeservicos.png";
 import BarraPatrocinio from "../img/BarraPatrocinio.png";
 import Navbar from "../Components/Navbar";
+import Logo1 from "../img/Logo1.png";
 
 import Tecido1 from "../img/Tecido1.png";
 import Tecido2 from "../img/Tecido2.png";
@@ -23,45 +25,128 @@ function Tecido() {
     { id: 6, nome: "Escudo e espada", preco: "230,00", img: Tecido6, desc: "Contém itens de defesa..." }
   ];
   
+  const [termoAssine, setTermoAssine] = useState('');
+  
+  const handleBuscar = () => {
+    if (termoAssine.trim() === '') {
+      alert('Seu melhor e-mail');
+      return;
+    }
+    console.log('Buscando por:', termoAssine);
+  };
+
+
 
   return (
     <>
-        
-    <div style={{ backgroundColor: "rgb(161, 52, 156)" , width: "100%", height:"20%"}}>
-  <div className="container ">
-    <h1 className="text-warning ">Brinquedos em tecido.</h1>
-  </div>
-</div>
+    
+    <div>
+      <div className="container" style={{ backgroundColor: "rgb(161, 52, 156)" }}>
+        <div className="container mb-3 p-3 gap-3">
+          <div className="row">
+            <div className="d-flex col-6 col-md-9 gap-4">
+              <h5 className="text-light mb-3">Inscreva-se no Clube Ciranda no mês de Julho e Ganhe 20% OFF para fazer parte do clube</h5>
 
-{/* Segunda Faixa Amarela Transparente */}
-<div style={{ backgroundColor: "rgba(255, 193, 7, 0.5)", width:"100%",height:"40%"}}>
-  <div className="container">
-    <div className="text-light">
-    <h2>Nossos kits em tecido para aflorar muita imaginação</h2>
-    <p>Nossos brinquedos educativos são feitos com algodão cru 100%...</p>
-    </div>
-  </div>
-</div>
-    <div className="container">
-      <div className="row">
-        {/* O map agora está fechado corretamente com }) */}
-        {produtos.map((produto) => (
-          <div 
-            key={produto.id} 
-            className="col-12 col-md-4 d-flex justify-content-center w-40"
-          >
-            <div className="card" style={{ width: "18rem", margin: "10px" }}> 
-              <img src={produto.img} className="card-img-top" alt={produto.nome} />
-              <div className="card-body shadow">
-                <h5 className="card-title">{produto.nome}</h5>
-                <p className="card-text">{produto.desc}</p>
-                <a href="./Carrinho" className="btn btn-success">Add R$:{produto.preco}</a>
+             
+            <div className="input-group mb-3 gap-4">
+                <input
+                  className="form-control"
+                  type="text"
+                  placeholder="Seu melhor e-mail"
+                  value={termoAssine}
+                  onChange={(e) => setTermoAssine(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleBuscar()}
+                />
+
+                <button className="btn btn-outline-warning " type="button" onClick={handleBuscar}>
+
+                  Assinar
+
+                </button>
+              </div>
               </div>
             </div>
           </div>
-        ))} 
+        </div>
       </div>
-    </div>
+
+     
+
+      {/* Imagem destaque */}
+      <div className="container mt-4">
+        <img src={Tecido1} alt="Destaque" className="img-fluid w-100" />
+      </div>
+  <div className="d-flex container justify-content-center">
+      <div className="row">
+        {produtos.map((produto) => (
+          <div 
+  key={produto.id} 
+  className="col-12 col-md-4 d-flex justify-content-center" // Responsivo: 1 coluna no mobile, 3 no desktop
+>
+        <div className="card" style={{ width: "100%", margin: "10px" }}> 
+          <img src={produto.img} className="card-img-top" alt={produto.nome} />
+          <div className="card-body shadow">
+            <h5 className="card-title">{produto.nome}</h5>
+            <p className="card-text">{produto.desc}</p>
+            <a href="./Carrinho" className="btn btn-success">Add R$:{produto.preco}</a>
+          </div>
+        </div>
+      </div>
+      
+        ))}
+      </div>
+
+       </div>
+      
+      <div className="mb-5">
+        <img 
+                  src={BarraPatrocinio}
+                  alt="Imagem com os patrocinadores"
+                  className="mt-4 img-fluid rounded shadow w-100 "
+                  />
+      </div>
+      <footer>
+          <div className="d-flex   justify-content-center">
+          <div className="row  ">
+            <div className="gap-2 col-3 align-items-center justify-content-center">
+              <img
+              src={Logo1}
+                alt="..."
+                className="mt-4 img-fluid rounded  w-50 "
+              
+              />
+              
+      
+            </div>
+            
+            <div className="justify-content-center col-3">
+              <h6>Quem somos</h6>
+              <p>O clube Ciranda</p>
+              <p>Al. dos Maracatins, 548 - Cj. 04 | Moema 04089-001 | São Paulo-SP</p>
+             
+      
+            </div>
+            <div className="gap-2 col-3">
+              <h6>Acervo</h6>
+              <p>Tecido</p>
+              <p>Madeira</p>
+              <p>Fantasias</p>
+              <p>Joguinho</p>
+            </div>
+            
+            <div className="gap-2 col-3">
+              <h6>Divulgação</h6>
+              <p>parcerias@brincaderia.com</p>
+              <p>imprensa@brincaderia.com</p>
+              
+      
+            </div>
+            <div className="col-4">
+      
+            </div>
+            </div>
+          </div>
+         </footer>
     </>
   );
 }

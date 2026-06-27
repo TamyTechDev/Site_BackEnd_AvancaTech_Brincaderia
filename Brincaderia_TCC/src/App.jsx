@@ -61,6 +61,11 @@ function App() {
         path="/Assine" 
         element={<Assine/>}/>
 
+        <Route 
+        path="/Joguinho" 
+        element={<Joguinho/>}/>
+        
+
 
       </Routes>
 

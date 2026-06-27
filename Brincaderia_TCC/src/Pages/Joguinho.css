@@ -1,0 +1,99 @@
+.joguinho {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joguinho h1 {
+  margin: 5px 0;
+}
+
+.joguinho h3 {
+  margin: 5px 0 10px 0;
+}
+
+
+
+.tabuleiro {
+  width: 90vw;
+  max-width: 1200px; /* ← aumenta pra Full HD */
+  aspect-ratio: 1920 / 1080; /* ← AGORA SIM A PROPORÇÃO CERTA */
+  height: auto;
+  margin: 0 auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative; 
+}
+/* 1. SOBE O GRID E AJUSTA O TAMANHO */
+.casa-container {
+  position: absolute;
+  top: 23.0%;   /* ← DESCEU 1% | era 25.0% */
+  left: 38%;  
+  width: 21.6%; 
+  height: 39.2%;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+}
+
+.risco {
+  position: absolute;
+  top: 26.0%;
+  left: 39.2%;
+  width: 21.6%;
+  height: 39.2%;
+  pointer-events: none;
+  z-index: 10;
+  object-fit: contain;
+}
+
+.casa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10%;
+  box-sizing: border-box;
+}
+
+.casa img {
+  width: 100%;  
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.4));
+}
+
+
+
+.casa:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+/* ÍCONES 300PX VIRAM 70% DA CASA */
+
+
+.btn-reiniciar {
+  background: #C13BAF;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-reiniciar:hover {
+  background: #A12C8F;
+  transform: translateY(-2px);
+}
